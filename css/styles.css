@@ -1,0 +1,110 @@
+/* Removes Default Styling of elements */
+html, body, div, section, h3, h2, h1, p, ul, li, input, button {
+margin: 0px;
+padding: 0px;
+border: 0px;
+}
+
+/*************** Main Styling of General Content *****************/
+
+/* Add Font Here - Requested font must be purchased first
+
+@font-face {
+    font-family: "acumin-pro";
+    src: 
+}                       */
+
+
+
+/* Panel Table Styling */
+table {
+    border-collapse: collapse;
+    width: 40%;
+    text-align: left;
+    margin-top: 13px;  /*Can be removed - margins for page space*/
+    margin-left: 13px; /*Can be removed - margins for page space*/
+    font-family: acumin-pro, sans-serif; /* fall back of sans-serif as acumin not avaiable and this was most similar */
+}
+
+th {
+    background-color: rgb(32, 161, 206);
+    color: white;
+    padding: 20px 0;
+}
+
+tr {
+    background-color: rgb(242, 242, 242);
+
+}
+
+td {
+    border-bottom: 1px solid white;
+        padding: 25px 0;
+}
+
+tr h1 {
+    font-size: 1.8rem;
+}
+
+tr h2 {
+    color: #444444;
+    font-size: 1.7rem;
+}
+
+tr p {
+    color: rgb(152, 152, 152);
+    font-size: 1.3rem;
+}
+
+tr p, tr h2, th h1 {
+    margin-left: 30px;
+    font-weight: lighter;
+}
+
+#topleft { 
+    border-top-left-radius: 0.5em;
+} 
+                    /* Border edges for top of table */
+#topright {
+    border-top-right-radius: 0.5em;    
+}
+
+
+
+/************ IOS style Switch Styling *************/
+
+input[type="checkbox"] {    /* Hide boring old HTML checkbox */
+	position: absolute;
+	opacity: 0;
+}
+
+/* Track OFF */
+input[type="checkbox"].switch + div {
+	width: 40px;
+    height: 20px;                       /* Creating the track */
+	border-radius: 998px;
+	background-color: rgba(152, 152, 152, 0.9);    /* OFF Track = grey */
+	-webkit-transition: box-shadow, 0.5s;      /* Transition for changing colour when switched */
+}
+
+/* Track ON */
+input[type="checkbox"].switch:checked + div {
+	box-shadow: inset 0 0 0 13px rgba(32, 161, 206, 1);    /* ON Track = blue */
+}
+
+/* Jack OFF */
+input[type="checkbox"].switch + div > div {
+	float: left;
+	width: 16px;
+    height: 16px;                   /* Creating the jack */
+	border-radius: 100%;
+	background-color: white;
+	-webkit-transition: transform, 0.5s;   /* Transition for moving jack when switched */
+    margin: 2px 2px;
+}
+
+/* Jack ON */
+input[type="checkbox"].switch:checked + div > div {
+	-webkit-transform: translate3d(20px, 0, 0);        /* Moving the jack */
+	background-color: white;
+}
