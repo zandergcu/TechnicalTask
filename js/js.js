@@ -1,24 +1,19 @@
-
-var Switches = document.getElementsByClassName("switch");   // Get switches in an array like object
-
-for (var i = 0; i < Switches.length; i++) {
-
-    Switches[i].addEventListener('click', logInfo);     // Add an event listener to each one that calls log info function
-}
-
-
-function logInfo() {
+$(document).on("click",".switch", function () {     //For all switches apply this on click function
     
-    // TO DO: Check ID of parent TR and store as variable X
+   var switchStatus = $(this).is(":checked");       // Set switch status as a conditional
     
-    // TO DO: Check new status of switch and store as variable Y
-        //If checked status = ON , Else OFF
-
-
-    // Log Info to console
-    console.log('Row ' + 'X' + ' has been switched to ' + 'Y' + '.');    //Log Info to Console
+	if (switchStatus == true) {
+       status="ON";                 //If checkbox is checked then switch is on / vice versa
+    } else {
+       status="OFF";
+    }   
     
-};
 
+    var rowID;  
+    var rowID = $(this).attr("id"); //Set Row ID as selected switch ID
+    
 
-// The final plan may change from the comment guide I have typed
+    
+    console.log('Row ' + rowID + ' has been switched to ' + status + '.'); // Log Results
+	
+});
